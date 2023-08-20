@@ -21,8 +21,7 @@ exports.signup = async (req, res) => {
 			email,
 			password,
 			confirmPassword,
-			contactNumber,
-			contactNo,
+			
 			otp,
 		} = req.body;
 		// Check if All Details are there or not
@@ -33,7 +32,7 @@ exports.signup = async (req, res) => {
 			!password ||
 			!confirmPassword ||
 			!otp ||
-			!contactNo
+		
 		) {
 			return res.status(403).send({
 				success: false,
@@ -83,7 +82,7 @@ exports.signup = async (req, res) => {
 			lastName,
 			email,
 			password: hashedPassword,
-			contactNo,
+		
 		
 			image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
 		});
